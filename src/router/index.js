@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 const Home = resolve => require(['@/views/Home'], resolve)
-const About = resolve => require(['@/views/About'], resolve)
 const ClothDetail = resolve => require(['@/views/ClothDetail'], resolve)
+const Custom = resolve => require(['@/views/Custom'], resolve)
 
 const Error404 = resolve => require(['@/views/error/Error404'], resolve)
 
@@ -15,8 +15,8 @@ let routes = [
         component: Home
     },
     {
-        path: '/about',
-        component: About
+        path: '/custom',
+        component: Custom
     },
     {
         path: '/cloth/:type',
