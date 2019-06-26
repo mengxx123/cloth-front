@@ -1,18 +1,20 @@
 <template>
     <my-page title="标准尺码对照表">
-        <ul>
-            <li v-for="group in groups">
-                <h2 class="group-title">{{ group.name }}</h2>
-                <ul class="type-list">
-                    <li class="item" v-for="type in group.types">
-                        <router-link class="link" :to="'cloth/' + type.id">
-                            <ui-icon class="icon" :value="':icon icon-' + type.icon" />
-                            <h3 class="title">{{ type.name }}</h3>
-                        </router-link>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+        <div class="common-container container">
+            <ul>
+                <li v-for="group in groups">
+                    <h2 class="group-title">{{ group.name }}</h2>
+                    <ul class="type-list">
+                        <li class="item" v-for="type in group.types">
+                            <router-link class="link" :to="'cloth/' + type.id">
+                                <ui-icon class="icon" :value="':icon icon-' + type.icon" />
+                                <h3 class="title">{{ type.name }}</h3>
+                            </router-link>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </my-page>
 </template>
 

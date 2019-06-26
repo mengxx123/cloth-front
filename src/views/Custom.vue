@@ -1,24 +1,26 @@
 <template>
     <my-page title="定制版">
-        <section class="tool-box" v-if="type !== 6 && type !== 25 && type !== 41">
-            <div class="tool-box-body">
-                <div class="form-horizontal">
-                    <div id="form">
-                        <div class="form-group">
-                            <ui-text-field v-model.number="height" type="number" label="身高（厘米）" /> 
+        <div class="common-container container">
+            <section class="tool-box" v-if="type !== 6 && type !== 25 && type !== 41">
+                <div class="tool-box-body">
+                    <div class="form-horizontal">
+                        <div id="form">
+                            <div class="form-group">
+                                <ui-text-field v-model.number="height" type="number" label="身高（厘米）" /> 
+                            </div>
+                            <div class="form-group">
+                                <ui-text-field v-model.number="weight" type="number" label="体重（斤）" /> 
+                            </div>
+                            <div class="btns">
+                                <ui-raised-button class="btn" label="尺码生成" primary @click="ok" />
+                                <ui-raised-button class="btn" label="重新输入" @click="reset" />
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <ui-text-field v-model.number="weight" type="number" label="体重（斤）" /> 
-                        </div>
-                        <div class="btns">
-                            <ui-raised-button class="btn" label="尺码生成" primary @click="ok" />
-                            <ui-raised-button class="btn" label="重新输入" @click="reset" />
-                        </div>
+                        <div class="result" v-if="result">推荐尺码：<span class="strong">{{ result }}</span></div>
                     </div>
-                    <div class="result" v-if="result">推荐尺码：<span class="strong">{{ result }}</span></div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </my-page>
 </template>
 
